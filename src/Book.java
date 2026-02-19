@@ -1,6 +1,6 @@
-public class Books extends Item {
+public class Book extends Item {
 
-        public Books(String title, int loanDays) {
+        public Book(String title, int loanDays) {
             super(title, loanDays);
         }
         @Override
