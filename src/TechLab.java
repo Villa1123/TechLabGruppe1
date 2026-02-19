@@ -76,7 +76,7 @@ public class TechLab {
                     techLab[i] = new Electronics(title, loanDays);
                     break;
                 default:
-                    System.out.println("Unknown type, defaulting to Fruit.");
+                    System.out.println("Unknown type, defaulting to Item.");
             }
 
         }
