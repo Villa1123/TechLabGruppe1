@@ -70,6 +70,8 @@ public class TechLab {
                     break;
                 case "electronic":
                     techLab[i] = new Electronics(title, loanDays);
+                    //if rasberryPi
+                    //if arduino
                     break;
                 default:
                     System.out.println("Unknown type, defaulting to Item.");
