@@ -21,7 +21,7 @@ public class TechLab {
 
     }
 
-    // Ask user for number of items
+    // Ask user for number of items 
     public static int askForCount(Scanner sc) {
 
         int count = 0;
