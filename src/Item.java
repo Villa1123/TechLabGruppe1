@@ -32,7 +32,7 @@ public abstract class Item {
 
         @Override
         public String toString() {
-            return "Product: " + title + " | Loan Days: " + loanDays;
+            return "Type: " + title + " | Loan Days: " + loanDays;
         }
     }
 
