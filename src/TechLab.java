@@ -33,6 +33,7 @@ public class TechLab {
                 count = sc.nextInt();
                 sc.nextLine();
 
+                //Makes sure the input is a positive number
                 if (count > 0) break;
                 else System.out.println("Enter a positive number!");
             } else {
@@ -44,7 +45,7 @@ public class TechLab {
         return count;
     }
 
-
+    //Creates an array of items
     public static Item[] createItemArray(Scanner sc, int count) {
 
         Item[] techLab = new Item[count];
@@ -69,10 +70,21 @@ public class TechLab {
                     break;
                 case "video":
                     System.out.print("Duration (minutes): ");
-                    String duration = sc.nextLine();
+                    int duration = sc.nextInt();
                     techLab[i] = new Video(title, loanDays, duration);
                     break;
                 case "electronic":
+                    if (title.toLowerCase().equals("raspberry pi")) {
+                        System.out.print("Model (4B/5): ");
+                        String model = sc.nextLine();
+                        //kald subclass metode
+                    } else if (title.toLowerCase().equals("ardunio")) {
+                        System.out.print("Kit level (Beginner/Advanced): ");
+                        String level = sc.nextLine();
+                        //kald subclass metode
+                    } else {
+                        System.out.println("Unknown input.");
+                    }
                     techLab[i] = new Electronics(title, loanDays);
                     break;
                 default:
@@ -80,6 +92,7 @@ public class TechLab {
             }
 
         }
+        return techLab;
 
     }
 
@@ -92,7 +105,7 @@ public class TechLab {
         }
     }
 
-    //Sort by title (Alphabetical A-Z)
+    //Sort by title (alphabetical)
     public static void sortByName(Item[] techLab) {
 
         // Bubble sort using nested loops
@@ -112,8 +125,6 @@ public class TechLab {
             }
         }
     }
-
-
 }
 
 
