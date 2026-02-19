@@ -21,13 +21,13 @@ public class TechLab {
 
     }
 
-    // Ask user for number of items 
+    // Ask user for number of items
     public static int askForCount(Scanner sc) {
 
         int count = 0;
 
         while (true) {
-            System.out.print("How many furniture items? ");
+            System.out.print("How many items do you want to borrow? ");
 
             if (sc.hasNextInt()) {
                 count = sc.nextInt();
@@ -63,10 +63,14 @@ public class TechLab {
 
             switch (type.toLowerCase()) {
                 case "book":
-                    techLab[i] = new Book(title, loanDays);
+                    System.out.print("Author: ");
+                    String author = sc.nextLine();
+                    techLab[i] = new Book(title, loanDays, author);
                     break;
                 case "video":
-                    techLab[i] = new Video(title, loanDays);
+                    System.out.print("Duration (minutes): ");
+                    String duration = sc.nextLine();
+                    techLab[i] = new Video(title, loanDays, duration);
                     break;
                 case "electronic":
                     techLab[i] = new Electronics(title, loanDays);
@@ -80,7 +84,6 @@ public class TechLab {
         }
 
     }
-
 
 
     //Print all items
