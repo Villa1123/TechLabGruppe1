@@ -69,10 +69,10 @@ public class TechLab {
                     techLab[i] = new Video(title, loanDays);
                     break;
                 case "electronic":
-                    techLab[i] = new Electronic(title, loanDays);
+                    techLab[i] = new Electronics(title, loanDays);
                     break;
                 default:
-                    System.out.println("Unknown type, defaulting to Fruit.");
+                    System.out.println("Unknown type, defaulting to Item.");
             }
 
         }
