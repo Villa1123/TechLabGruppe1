@@ -23,3 +23,4 @@ public class RasberryPi extends Electronics{
         return "RasberryPi  | " + super.toString() + " | Model: " + rModel;
     }
 }
+//ffj
