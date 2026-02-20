@@ -4,7 +4,7 @@ public abstract class Item {
         private int loanDays;
 
         // Constructor
-        public Item(String title, int loanDay) {
+        public Item(String title, int loanDays) {
             this.title = title;
             this.loanDays = loanDays;
         }
@@ -27,12 +27,12 @@ public abstract class Item {
             this.loanDays = loanDays;
         }
 
-        // Polymorphic method (VERY important)
-        public abstract void useProduct();
+        // Abstract methods (implemented in subclasses)
+        public abstract void fee();
 
         @Override
         public String toString() {
-            return "Type: " + title + " | Loan Days: " + loanDays;
+            return "Title: " + title + " | Loan Days: " + loanDays;
         }
     }
 

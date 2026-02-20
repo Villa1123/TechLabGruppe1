@@ -6,16 +6,22 @@ public class TechLab {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Welcome to the Techlab Loan System!\n--------------------------------------");
+
         int count = askForCount(sc);
 
         Item[] itemArray = createItemArray(sc, count);
 
         printItem(itemArray);
 
-        sortByName(itemArray);
+        sortByTitle(itemArray);
 
-        System.out.println("\n--- Sorted by Title ---");
+        System.out.println("\nSorted loan items by Title:\n--------------------------------------");
         printItem(itemArray);
+
+        printFee(itemArray);
+
+        System.out.print("\nSummary:\nYou borrowed " + itemArray.length + " items today.");
 
         sc.close();
 
@@ -52,7 +58,7 @@ public class TechLab {
 
         for (int i = 0; i < count; i++) {
 
-            System.out.println("\nType (book/video/electronics): ");
+            System.out.print("\nType (book/video/electronics): ");
             String type = sc.nextLine();
 
             System.out.print("Title: ");
@@ -74,18 +80,24 @@ public class TechLab {
                     techLab[i] = new Video(title, loanDays, duration);
                     break;
                 case "electronic":
-                    if (title.toLowerCase().equals("raspberry pi")) {
+                    if (title.equalsIgnoreCase("raspberry pi")) {
                         System.out.print("Model (4B/5): ");
                         String model = sc.nextLine();
                         //kald subclass metode
-                    } else if (title.toLowerCase().equals("ardunio")) {
+                        //RasberryPi rasp = new RasberryPi(title, loanDays, model);
+                        //rasp.rModel(model);
+                        techLab[i] = new RasberryPi(title, loanDays, model);
+                        //rModel(model);
+                    } else if (title.equalsIgnoreCase("ardunio")) {
                         System.out.print("Kit level (Beginner/Advanced): ");
                         String level = sc.nextLine();
                         //kald subclass metode
+                        techLab[i] = new Arduino(title, loanDays, level);
+                        //kitLevel(level);
                     } else {
                         System.out.println("Unknown input.");
                     }
-                    techLab[i] = new Electronics(title, loanDays);
+                    //techLab[i] = new Electronics(title, loanDays);
                     //if rasberryPi
                     //if arduino
                     break;
@@ -99,32 +111,42 @@ public class TechLab {
     }
 
 
-    //Print all items
+    //Print all items in the array.
     public static void printItem(Item[] techLab) {
-
+        int n = 1;
         for (int i = 0; i < techLab.length; i++) {
-            System.out.println(techLab[i]);
+            System.out.println("Item #" + n);
+            n++;
+            System.out.println(techLab[i] + "\n");
         }
     }
 
     //Sort by title (alphabetical)
-    public static void sortByName(Item[] techLab) {
+    public static void sortByTitle(Item[] techLab) {
 
         // Bubble sort using nested loops
         for (int i = 0; i < techLab.length - 1; i++) {
 
             for (int j = 0; j < techLab.length - 1 - i; j++) {
+                //printFee(techLab);
 
-                // compareTo compares Strings alphabetically
+                //compares the String titles alphabetically
                 if (techLab[j].getTitle()
                         .compareTo(techLab[j + 1].getTitle()) > 0) {
 
-                    // Swap objects
+                    //Swap objects
                     Item temp = techLab[j];
                     techLab[j] = techLab[j + 1];
                     techLab[j + 1] = temp;
                 }
             }
+        }
+    }
+
+    public static void printFee(Item[] techLab) {
+        for (Item i : techLab) {
+            //Polymorphism
+            i.fee();
         }
     }
 }

@@ -19,10 +19,12 @@ public class Arduino extends Electronics {
     }
 
     @Override
+    public void fee() {
+        System.out.println("Late fee per day for " + getTitle() + ": 20kr.");
+    }
+
+    @Override
     public String toString() {
         return "Arduino 🤖 | " + super.toString() + " | Kit level: " + kitLevel;
     }
 }
-
-//hej
-//hd

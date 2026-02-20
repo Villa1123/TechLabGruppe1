@@ -2,7 +2,7 @@ public class RasberryPi extends Electronics{
 
     private String rModel;
 
-    public Arduino(String title, int loanDays, String model) {
+    public RasberryPi(String title, int loanDays, String rModel) {
         super(title, loanDays);
         this.rModel = rModel;
     }
@@ -19,9 +19,12 @@ public class RasberryPi extends Electronics{
     }
 
     @Override
+    public void fee() {
+        System.out.println("Late fee per day for " + getTitle() + ": 40kr.");
+    }
+
+    @Override
     public String toString() {
         return "RasberryPi  | " + super.toString() + " | Model: " + rModel;
     }
 }
-//ffj
-//HH
