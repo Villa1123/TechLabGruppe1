@@ -1,8 +1,8 @@
-public class RasberryPi extends Electronics{
+public class RaspberryPi extends Electronics{
 
     private String rModel;
 
-    public RasberryPi(String title, int loanDays, String rModel) {
+    public RaspberryPi(String title, int loanDays, String rModel) {
         super(title, loanDays);
         this.rModel = rModel;
     }
@@ -25,6 +25,6 @@ public class RasberryPi extends Electronics{
 
     @Override
     public String toString() {
-        return "RasberryPi  | " + super.toString() + " | Model: " + rModel;
+        return "RaspberryPi  | " + super.toString() + " | Model: " + rModel;
     }
 }

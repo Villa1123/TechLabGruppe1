@@ -79,16 +79,16 @@ public class TechLab {
                     int duration = sc.nextInt();
                     techLab[i] = new Video(title, loanDays, duration);
                     break;
-                case "electronic":
-                    if (title.equalsIgnoreCase("raspberry pi")) {
+                case "electronics":
+                    if (title.equalsIgnoreCase("raspberrypi")) {
                         System.out.print("Model (4B/5): ");
                         String model = sc.nextLine();
                         //kald subclass metode
-                        //RasberryPi rasp = new RasberryPi(title, loanDays, model);
+                        //RaspberryPi rasp = new RaspberryPi(title, loanDays, model);
                         //rasp.rModel(model);
-                        techLab[i] = new RasberryPi(title, loanDays, model);
+                        techLab[i] = new RaspberryPi(title, loanDays, model);
                         //rModel(model);
-                    } else if (title.equalsIgnoreCase("ardunio")) {
+                    } else if (title.equalsIgnoreCase("arduino")) {
                         System.out.print("Kit level (Beginner/Advanced): ");
                         String level = sc.nextLine();
                         //kald subclass metode
@@ -98,7 +98,7 @@ public class TechLab {
                         System.out.println("Unknown input.");
                     }
                     //techLab[i] = new Electronics(title, loanDays);
-                    //if rasberryPi
+                    //if RaspberryPi
                     //if arduino
                     break;
                 default:
