@@ -10,7 +10,6 @@ public class Book extends Item {
     @Override
     public void fee() {
         System.out.println("Late fee per late day for " + getTitle() + ": 1.5kr.");
-
     }
 
     @Override

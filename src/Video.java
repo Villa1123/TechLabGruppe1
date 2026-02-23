@@ -9,13 +9,11 @@
 
       @Override
       public void fee() {
-         System.out.println("Late fee per day for " + getTitle() + ": 3kr.");
+          System.out.println("Late fee per day for " + getTitle() + ": 3kr.");
       }
 
      @Override
      public String toString() {
-         return "Type: Video | " + super.toString() + "| Duration: " + duration;
-
-
+         return "Type: Video | " + super.toString() + " | Duration: " + duration;
      }
  }

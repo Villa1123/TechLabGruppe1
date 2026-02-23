@@ -1,21 +1,12 @@
 public class RaspberryPi extends Electronics{
 
     private String rModel;
+    private int baseValue;
 
-    public RaspberryPi(String title, int loanDays, String rModel) {
+    public RaspberryPi(String title, int loanDays, String rModel, int baseValue) {
         super(title, loanDays);
         this.rModel = rModel;
-    }
-
-    public void rModel(String model) {
-        if (model.equals("4B")) {
-            System.out.println("Model: 4B");
-        }
-        else if (model.equals("5")) {
-            System.out.println("Model: 5");
-        } else{
-            System.out.println("Unknown item");
-        }
+        this.baseValue = baseValue;
     }
 
     @Override
@@ -25,6 +16,6 @@ public class RaspberryPi extends Electronics{
 
     @Override
     public String toString() {
-        return "RaspberryPi  | " + super.toString() + " | Model: " + rModel;
+        return "Type: Electronics 🤖 | " + super.toString() + " | Model: " + rModel + " | Base value: " + baseValue;
     }
 }

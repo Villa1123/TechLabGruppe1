@@ -9,7 +9,7 @@ public abstract class Item {
             this.loanDays = loanDays;
         }
 
-        // Getter
+        // Getter method (used to access private attribute)
         public String getTitle() {
             return title;
         }
@@ -18,11 +18,12 @@ public abstract class Item {
             return loanDays;
         }
 
-        // Setter
+        // Setter (used to change the title if needed)
         public void setTitle(String title) {
             this.title = title;
         }
 
+        // Setter (used to change amount of loan days if needed)
         public void setLoanDays(int loanDays) {
             this.loanDays = loanDays;
         }

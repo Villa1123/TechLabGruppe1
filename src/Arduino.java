@@ -1,21 +1,12 @@
 public class Arduino extends Electronics {
 
     private String kitLevel;
+    private int baseValue;
 
-    public Arduino(String title, int loanDays, String kitLevel) {
+    public Arduino(String title, int loanDays, String kitLevel, int baseValue) {
         super(title, loanDays);
         this.kitLevel = kitLevel;
-    }
-
-    public void kitLevel(String level) {
-        if (level.equals("beginner")) {
-            System.out.println("Base level: 400");
-        }
-        else if (level.equals("advanced")) {
-            System.out.println("Base level: 500");
-        } else{
-            System.out.println("Unknown item");
-        }
+        this.baseValue = baseValue;
     }
 
     @Override
@@ -25,6 +16,6 @@ public class Arduino extends Electronics {
 
     @Override
     public String toString() {
-        return "Arduino 🤖 | " + super.toString() + " | Kit level: " + kitLevel;
+        return "Type: Electronics 🤖 | " + super.toString() + " | Kit level: " + kitLevel + " | Base value: " + baseValue;
     }
 }

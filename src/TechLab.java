@@ -12,8 +12,6 @@ public class TechLab {
 
         Item[] itemArray = createItemArray(sc, count);
 
-        printItem(itemArray);
-
         sortByTitle(itemArray);
 
         System.out.println("\nSorted loan items by Title:\n--------------------------------------");
@@ -83,23 +81,20 @@ public class TechLab {
                     if (title.equalsIgnoreCase("raspberrypi")) {
                         System.out.print("Model (4B/5): ");
                         String model = sc.nextLine();
-                        //kald subclass metode
-                        //RaspberryPi rasp = new RaspberryPi(title, loanDays, model);
-                        //rasp.rModel(model);
-                        techLab[i] = new RaspberryPi(title, loanDays, model);
-                        //rModel(model);
+                        System.out.print("Base value: ");
+                        int baseValue = sc.nextInt();
+                        //Electronics rasp = new RaspberryPi(title, loanDays, model, baseValue);
+                        //techLab[i] = rasp;
+                        techLab[i] = new RaspberryPi(title, loanDays, model, baseValue);
                     } else if (title.equalsIgnoreCase("arduino")) {
                         System.out.print("Kit level (Beginner/Advanced): ");
                         String level = sc.nextLine();
-                        //kald subclass metode
-                        techLab[i] = new Arduino(title, loanDays, level);
-                        //kitLevel(level);
+                        System.out.print("Base value: ");
+                        int bValue = sc.nextInt();
+                        techLab[i] = new Arduino(title, loanDays, level, bValue);
                     } else {
                         System.out.println("Unknown input.");
                     }
-                    //techLab[i] = new Electronics(title, loanDays);
-                    //if RaspberryPi
-                    //if arduino
                     break;
                 default:
                     System.out.println("Unknown type, defaulting to Item.");
@@ -128,7 +123,6 @@ public class TechLab {
         for (int i = 0; i < techLab.length - 1; i++) {
 
             for (int j = 0; j < techLab.length - 1 - i; j++) {
-                //printFee(techLab);
 
                 //compares the String titles alphabetically
                 if (techLab[j].getTitle()
@@ -144,9 +138,9 @@ public class TechLab {
     }
 
     public static void printFee(Item[] techLab) {
-        for (Item i : techLab) {
+        for (Item object : techLab) {
             //Polymorphism
-            i.fee();
+            object.fee();
         }
     }
 }
