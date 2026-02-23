@@ -75,6 +75,8 @@ public class TechLab {
                 case "video":
                     System.out.print("Duration (minutes): ");
                     int duration = sc.nextInt();
+                    //clear buffer, så scanneren er klar til det næste String input
+                    sc.nextLine();
                     techLab[i] = new Video(title, loanDays, duration);
                     break;
                 case "electronics":
@@ -83,14 +85,16 @@ public class TechLab {
                         String model = sc.nextLine();
                         System.out.print("Base value: ");
                         int baseValue = sc.nextInt();
-                        //Electronics rasp = new RaspberryPi(title, loanDays, model, baseValue);
-                        //techLab[i] = rasp;
+                        //clear buffer
+                        sc.nextLine();
                         techLab[i] = new RaspberryPi(title, loanDays, model, baseValue);
                     } else if (title.equalsIgnoreCase("arduino")) {
                         System.out.print("Kit level (Beginner/Advanced): ");
                         String level = sc.nextLine();
                         System.out.print("Base value: ");
                         int bValue = sc.nextInt();
+                        sc.nextLine();
+                        //clear buffer
                         techLab[i] = new Arduino(title, loanDays, level, bValue);
                     } else {
                         System.out.println("Unknown input.");
