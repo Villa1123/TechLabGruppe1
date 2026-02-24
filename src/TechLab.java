@@ -33,6 +33,7 @@ public class TechLab {
         while (true) {
             System.out.print("How many items do you want to borrow? ");
 
+            //Makes sure that the input is an int
             if (sc.hasNextInt()) {
                 count = sc.nextInt();
                 sc.nextLine();
@@ -51,9 +52,10 @@ public class TechLab {
 
     //Creates an array of items
     public static Item[] createItemArray(Scanner sc, int count) {
-
+        //Creates an item array with the length of count.
         Item[] techLab = new Item[count];
 
+        //for loop that inserts the items in the array
         for (int i = 0; i < count; i++) {
 
             System.out.print("\nType (book/video/electronics): ");
@@ -66,16 +68,20 @@ public class TechLab {
             int loanDays = sc.nextInt();
             sc.nextLine();
 
+            //switch case that for each type ask for further information
             switch (type.toLowerCase()) {
                 case "book":
+                    //If the type is "book" the system asks about the "author"
                     System.out.print("Author: ");
+                    //Saves the input in a String called "author"
                     String author = sc.nextLine();
+                    //Creates a new Book item and saves it in the techLab array on the index i.
                     techLab[i] = new Book(title, loanDays, author);
                     break;
                 case "video":
                     System.out.print("Duration (minutes): ");
                     int duration = sc.nextInt();
-                    //clear buffer, så scanneren er klar til det næste String input
+                    //Clear buffer, so the scanner is ready for the next String input
                     sc.nextLine();
                     techLab[i] = new Video(title, loanDays, duration);
                     break;
@@ -143,6 +149,7 @@ public class TechLab {
 
     //Enhanced for loop
     public static void printFee(Item[] techLab) {
+        //for each object in the techLab array it shall call the method fee()
         for (Item object : techLab) {
             //Polymorphism
             object.fee();
