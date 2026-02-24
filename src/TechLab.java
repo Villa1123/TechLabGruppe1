@@ -141,6 +141,7 @@ public class TechLab {
         }
     }
 
+    //Enhanced for loop
     public static void printFee(Item[] techLab) {
         for (Item object : techLab) {
             //Polymorphism
